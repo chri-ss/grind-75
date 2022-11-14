@@ -15,3 +15,18 @@ var twoSum = function (nums, target) {
     }
   }
 };
+
+//hash map solution 
+
+var twoSum = function (nums, target) {
+  let hash = {};
+  hash[nums[0]] = 0;
+
+  for(let i = 1; i < nums.length; ++i) {
+    if (hash.hasOwnProperty(target - nums[i])) {
+      return [hash[target - nums[i]], i]
+    } else {
+      hash[nums[i]] = i;
+    }
+  }
+}
